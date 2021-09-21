@@ -45,6 +45,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Syncfusion.Compression.Portable, Version=19.2200.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.19.2.0.55\lib\netstandard2.0\Syncfusion.Compression.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.HtmlConverter.Portable, Version=19.2200.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.19.2.0.55\lib\netstandard2.0\Syncfusion.HtmlConverter.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Portable, Version=19.2200.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.19.2.0.55\lib\netstandard2.0\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -176,6 +185,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="CustomerRegistration.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Error_Page.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -243,6 +253,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Search.aspx" />
+    <Content Include="Send_Quotees.aspx" />
     <Content Include="Site.Master" />
     <Content Include="test.aspx" />
     <Content Include="test1.aspx" />
@@ -297,6 +308,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error_Page.aspx.cs">
+      <DependentUpon>Error_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error_Page.aspx.designer.cs">
+      <DependentUpon>Error_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -392,6 +410,13 @@
     </Compile>
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Send_Quotees.aspx.cs">
+      <DependentUpon>Send_Quotees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Send_Quotees.aspx.designer.cs">
+      <DependentUpon>Send_Quotees.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
