@@ -44,7 +44,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MimeKit, Version=2.15.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.15.1\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Compression.Portable, Version=19.2200.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.19.2.0.55\lib\netstandard2.0\Syncfusion.Compression.Portable.dll</HintPath>
     </Reference>
@@ -53,6 +59,9 @@
     </Reference>
     <Reference Include="Syncfusion.Pdf.Portable, Version=19.2200.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core.19.2.0.55\lib\netstandard2.0\Syncfusion.Pdf.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -64,6 +73,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -133,8 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Management.aspx" />
-    <Content Include="Admin_Manage_Brand.aspx" />
-    <Content Include="Admin_Manage_Vehicles.aspx" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\datepicker.min.css" />
@@ -184,7 +192,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CustomerRegistration.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="Error_Page.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -213,13 +220,11 @@
     <Content Include="assets\fonts\lightcaseeead.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Homies.aspx" />
-    <Content Include="Login.aspx" />
     <Content Include="Login1.aspx" />
     <Content Include="Manage_Branches.aspx" />
     <Content Include="Manage_Brand.aspx" />
     <Content Include="Manage_Vehicle_Type.aspx" />
     <Content Include="Quote.aspx" />
-    <Content Include="Registartion.aspx" />
     <Content Include="RegisterCars.aspx" />
     <Content Include="Register_Vehicle.aspx" />
     <Content Include="Remove_Vehicles.aspx" />
@@ -255,7 +260,6 @@
     <Content Include="Search.aspx" />
     <Content Include="Send_Quotees.aspx" />
     <Content Include="Site.Master" />
-    <Content Include="test.aspx" />
     <Content Include="test1.aspx" />
     <Content Include="VehicleRegistration.aspx" />
     <Content Include="Vehicle_Management.aspx" />
@@ -271,20 +275,6 @@
     </Compile>
     <Compile Include="Admin_Management.aspx.designer.cs">
       <DependentUpon>Admin_Management.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Manage_Brand.aspx.cs">
-      <DependentUpon>Admin_Manage_Brand.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Manage_Brand.aspx.designer.cs">
-      <DependentUpon>Admin_Manage_Brand.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Manage_Vehicles.aspx.cs">
-      <DependentUpon>Admin_Manage_Vehicles.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Manage_Vehicles.aspx.designer.cs">
-      <DependentUpon>Admin_Manage_Vehicles.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -302,13 +292,6 @@
     <Compile Include="CustomerRegistration.aspx.designer.cs">
       <DependentUpon>CustomerRegistration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Error_Page.aspx.cs">
       <DependentUpon>Error_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,13 +308,6 @@
     </Compile>
     <Compile Include="Homies.aspx.designer.cs">
       <DependentUpon>Homies.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login1.aspx.cs">
       <DependentUpon>Login1.aspx</DependentUpon>
@@ -368,13 +344,6 @@
     </Compile>
     <Compile Include="Quote.aspx.designer.cs">
       <DependentUpon>Quote.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Registartion.aspx.cs">
-      <DependentUpon>Registartion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registartion.aspx.designer.cs">
-      <DependentUpon>Registartion.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegisterCars.aspx.cs">
       <DependentUpon>RegisterCars.aspx</DependentUpon>
@@ -431,13 +400,6 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="test1.aspx.cs">
       <DependentUpon>test1.aspx</DependentUpon>
