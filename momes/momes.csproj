@@ -220,6 +220,7 @@
     <Content Include="assets\fonts\lightcaseeead.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Homies.aspx" />
+
     <Content Include="Login1.aspx" />
     <Content Include="Manage_Branches.aspx" />
     <Content Include="Manage_Brand.aspx" />
@@ -310,6 +311,7 @@
     <Compile Include="Homies.aspx.designer.cs">
       <DependentUpon>Homies.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="Login1.aspx.cs">
       <DependentUpon>Login1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -48,11 +48,11 @@ namespace momes
             Session["Date_Time_Pick_Up"] = txtPickupDate.Text;
             Session["Date_Time_Off"] = txtDropOffDate.Text;
 
-            Response.Redirect("test1.aspx");
+            Response.Redirect("Search.aspx");
             try
             {
                 Session["vehicle_type"] = ddlVehicleType.SelectedItem.Value;
-                Response.Redirect("test1.aspx");
+                Response.Redirect("Search.aspx");
             }
             catch(Exception ex)
             {
