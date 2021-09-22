@@ -125,8 +125,10 @@
                   <a href="#0" class="google">google plus</a>
                   <a href="#0" class="twitter">twitter</a>
                 </div>--%>
+                  <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 <div class="frm-group text-center">
                     <asp:TextBox ID="txtName" runat="server"  placeholder="UserName" ></asp:TextBox>
+                    <br />&nbsp;
                 </div>
              
                 <div class="frm-group">
@@ -134,7 +136,7 @@
                     <br /><br />&nbsp;
                 </div>
                 <div class="frm-group">
-                    <asp:Button id="btnSend" runat="server" Text="Send Quotes" />
+                    <asp:Button id="btnSend" class="cmn-btn" runat="server" Text="Send Quotes" OnClick="btnSend_Click" />
                 </div>
               </form>
             

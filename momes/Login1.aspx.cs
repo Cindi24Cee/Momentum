@@ -14,7 +14,21 @@ namespace momes
         DBAccess da = new DBAccess();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                string pick_up_location = (string)Session["Location_Pick_Up"];
+                string drop_off_location = (string)Session["Location_Drop_Off"];
+                string date_time_pick_up = (string)Session["Date_Time_Pick_Up"];
+                string date_time_drop_off = (string)Session["Date_Time_Off"];
+                string carName = "Mazda";
+                int noOfdays = Convert.ToInt32((string)Session["Number_Of_Days"]);
+                int total = Convert.ToInt32((string)Session["Total_Price"]);
+                int grandTotal = Convert.ToInt32((string)Session["Grand_Total"]);
+            } catch(Exception ex)
+            {
+                ex.ToString();
+                Response.Redirect("Error_page.aspx");
+            }
         }
 
         protected void btnLog_Click(object sender, EventArgs e)
@@ -43,8 +57,8 @@ namespace momes
         protected void Success()
         {
             string message = "Success.";
-        string script = "window.onload = function(){ alert('";
-        script += message;
+            string script = "window.onload = function(){ alert('";
+            script += message;
             script += "')};";
             ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
         }
