@@ -261,6 +261,7 @@
     <Content Include="Send_Quotees.aspx" />
     <Content Include="Site.Master" />
     <Content Include="test1.aspx" />
+    <Content Include="testing123.aspx" />
     <Content Include="VehicleRegistration.aspx" />
     <Content Include="Vehicle_Management.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -407,6 +408,13 @@
     </Compile>
     <Compile Include="test1.aspx.designer.cs">
       <DependentUpon>test1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testing123.aspx.cs">
+      <DependentUpon>testing123.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testing123.aspx.designer.cs">
+      <DependentUpon>testing123.aspx</DependentUpon>
     </Compile>
     <Compile Include="VehicleRegistration.aspx.cs">
       <DependentUpon>VehicleRegistration.aspx</DependentUpon>

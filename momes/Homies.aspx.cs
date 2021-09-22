@@ -44,7 +44,7 @@ namespace momes
 
             Session["vehicle_type"] = ddlVehicleType.SelectedItem.Value;
             Session["Location_Pick_Up"] = ddlPick.SelectedItem.Text;
-            Session["Location_Drop-Off"] = ddlDrop.SelectedItem.Text;
+            Session["Location_Drop_Off"] = ddlDrop.SelectedItem.Text;
             Session["Date_Time_Pick_Up"] = txtPickupDate.Text;
             Session["Date_Time_Off"] = txtDropOffDate.Text;
 

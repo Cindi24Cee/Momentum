@@ -30,16 +30,23 @@ namespace momes
          
             //  int Gross_Total = No_Of_Days + Price;
             double TotalPrice = deposit + contractFee + Admin_and_Prep_Fee;
-
-            lblGrandTotal.Text = TotalPrice.ToString();
-
+           
+          
+            Session["Total_Price"] = lblGrandTotal.Text;
 
             DateTime date1 = Convert.ToDateTime(lblPickUpDate.Text);
             DateTime date2 = Convert.ToDateTime(lblDropOffD.Text);
 
             int dateiff = ((TimeSpan)(date2 - date1)).Days;
+            int noOfDays = dateiff;
 
-           lblNumberOfDays.Text = dateiff.ToString();
+            int GrandTotal = (int)TotalPrice + (noOfDays * 1000);
+            lblNumberOfDays.Text = dateiff.ToString();
+            Session["Number_Of_Days"] = lblNumberOfDays.Text;
+
+
+            lblGrandTotal.Text = GrandTotal.ToString();
+            Session["Grand_Total"] = lblGrandTotal.Text;
         }
 
 
