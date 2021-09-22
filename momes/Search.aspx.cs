@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +16,33 @@ namespace momes
         DBAccess da = new DBAccess();
         protected void Page_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            string cs = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            string Query = "select * from VEHICLE";
+            SqlCommand cmd = new SqlCommand(Query);
+            SqlConnection con = new SqlConnection(cs);
+            SqlDataAdapter sda = new SqlDataAdapter();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            try
+            {
+                con.Open();
+                sda.SelectCommand = cmd;
+                sda.Fill(dt);
+                lstVehicle.DataSource = dt;
+                lstVehicle.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                sda.Dispose();
+                con.Dispose();
+                dt.Dispose();
+            }
             if (!Page.IsPostBack)
             {
                 //Vehicle Brand

@@ -110,6 +110,7 @@ namespace Data_Access_Layer
        
                          CarNo = Convert.ToInt32(row["CarNo"].ToString()),
                          CarLicenseNo = row["CarLicenseNo"].ToString(),
+                         CarModelYear = Convert.ToInt32(row["CarModelYear"].ToString()),
                          CarMake = row["CarMake"].ToString(),
                          FuelType = row["FuelType"].ToString(),
                          DoorNo = Convert.ToInt32(row["DoorNo"].ToString()),
