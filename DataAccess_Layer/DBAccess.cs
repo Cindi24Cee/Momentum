@@ -297,6 +297,37 @@ namespace Data_Access_Layer
 
         }
 
+        public List<uspVehicle> Get_Vehicle_Image(int CarNo)
+        {
+          
+          
+             List<uspVehicle> list = null;
+            SqlParameter[] parameters = new SqlParameter[]
+                 {
+                          new  SqlParameter("@CarNo",CarNo),
+
+                 };
+
+            using (DataTable table = DBHelper.ParamSelect("sp_Image_By_ID", CommandType.StoredProcedure, parameters))
+            {
+                if (table.Rows.Count > 0)
+                {
+                    list = new List<uspVehicle>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        uspVehicle search = new uspVehicle();
+                       search.Image = Convert.ToByte(row["Image"]);
+                       list.Add(search);
+                    }
+                }
+            }
+            return list;
+        }
+
+
+
+
+
 
         public List<uspVehicle> Get_Vehicle_By_Type(int VehicleTypeID)
         {

@@ -156,7 +156,7 @@
                                         <div class="car-item car-item--style2">
                                             <div class="thumb bg_img" data-background="assets/images/cars/4.png">
 
-                                                <asp:Image ImageUrl='<%# Eval("CarNo", "Image.aspx?CarNo={0}")%>' runat="server" />
+                                                <asp:Image ImageUrl='<%# Eval("CarNo", "Search.aspx?CarNo={0}")%>' runat="server" />
                                             </div>
                                             <div class="car-item-body">
                                                 <div class="content">

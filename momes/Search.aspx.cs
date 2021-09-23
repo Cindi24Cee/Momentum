@@ -16,33 +16,32 @@ namespace momes
         DBAccess da = new DBAccess();
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            string cs = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-            string Query = "select * from VEHICLE";
-            SqlCommand cmd = new SqlCommand(Query);
-            SqlConnection con = new SqlConnection(cs);
-            SqlDataAdapter sda = new SqlDataAdapter();
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con;
             try
             {
+                string Query = "SELECT image from VEHICLE where CarNo = @Id";
+                string cs = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+                SqlCommand cmd = new SqlCommand(Query);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = Convert.ToInt32(Request.QueryString["CarNo"]);
+                SqlConnection con = new SqlConnection(cs);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                cmd.CommandType = CommandType.Text;
+                DataTable dt = new DataTable();
+                cmd.Connection = con;
+
                 con.Open();
                 sda.SelectCommand = cmd;
                 sda.Fill(dt);
-                lstVehicle.DataSource = dt;
-                lstVehicle.DataBind();
-            }
-            catch (Exception ex)
+
+
+                Byte[] bytes = (Byte[])dt.Rows[0]["Image"];
+                Response.BinaryWrite(bytes);
+                Response.Flush();
+                Response.End();
+            } catch(Exception ex)
             {
-                Response.Write(ex.Message);
+                ex.ToString();
             }
-            finally
-            {
-                con.Close();
-                sda.Dispose();
-                con.Dispose();
-                dt.Dispose();
-            }
+
             if (!Page.IsPostBack)
             {
                 //Vehicle Brand
@@ -99,15 +98,15 @@ namespace momes
 
             if ((result < 0 && date < pickDate))
             {
-                //Success();
-                Response.Redirect("test1.aspx");
+               
+                Response.Redirect("Quote.aspx");
 
             }
 
             else
             {
-                // Response.Redirect("Homies.aspx");
-                //Failed();
+                Response.Redirect("Homies.aspx");
+               
             }
             Response.Redirect("Quote.aspx");
 

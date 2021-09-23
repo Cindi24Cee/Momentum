@@ -35,23 +35,20 @@ namespace momes
         {
 
 
+            
+                try
+                {
+                    da.AuthenticateUser(txtEmail.Text.Trim(), txtPassword.Text.Trim());
+                Response.Redirect("Quote.aspx");
+                }
+                catch (SqlException ex)
+                {
 
-            try
-            {
-                da.AuthenticateUser(txtEmail.Text.Trim(), txtPassword.Text.Trim());
-                txtEmail.Text = String.Empty;
-                txtPassword.Text = String.Empty;
+                    ex.ToString();
+                    Failed();
+                }
 
-               // Session["CustomerName"] = lblCustomerName.Text;
-                Response.Redirect("Search.aspx");
-
-            }
-            catch (SqlException ex)
-            {
-
-                ex.ToString();
-                Failed();
-            }
+            
         }
 
         protected void Success()
