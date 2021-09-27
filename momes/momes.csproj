@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Management.aspx" />
+    <Content Include="Approve_Test.aspx" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\datepicker.min.css" />
@@ -220,7 +221,6 @@
     <Content Include="assets\fonts\lightcaseeead.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Homies.aspx" />
-
     <Content Include="Login1.aspx" />
     <Content Include="Manage_Branches.aspx" />
     <Content Include="Manage_Brand.aspx" />
@@ -259,6 +259,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Search.aspx" />
+    <Content Include="search_test.aspx" />
     <Content Include="Send_Quotees.aspx" />
     <Content Include="Site.Master" />
     <Content Include="test1.aspx" />
@@ -277,6 +278,13 @@
     </Compile>
     <Compile Include="Admin_Management.aspx.designer.cs">
       <DependentUpon>Admin_Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Approve_Test.aspx.cs">
+      <DependentUpon>Approve_Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approve_Test.aspx.designer.cs">
+      <DependentUpon>Approve_Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -311,7 +319,6 @@
     <Compile Include="Homies.aspx.designer.cs">
       <DependentUpon>Homies.aspx</DependentUpon>
     </Compile>
-
     <Compile Include="Login1.aspx.cs">
       <DependentUpon>Login1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -382,6 +389,13 @@
     </Compile>
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search_test.aspx.cs">
+      <DependentUpon>search_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search_test.aspx.designer.cs">
+      <DependentUpon>search_test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Send_Quotees.aspx.cs">
       <DependentUpon>Send_Quotees.aspx</DependentUpon>

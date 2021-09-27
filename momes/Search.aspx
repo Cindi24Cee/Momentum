@@ -157,6 +157,12 @@
                                             <div class="thumb bg_img" data-background="assets/images/cars/4.png">
 
                                                 <asp:Image ImageUrl='<%# Eval("CarNo", "Search.aspx?CarNo={0}")%>' runat="server" />
+
+                                                <asp:Label ID="lblCarNo" visible="false" runat="server" Text=" ">  <%# Eval("CarNo")%></asp:Label>
+                                                <asp:Label ID="lblCarMake" visible="false" runat="server" Text=" ">  <%# Eval("CarMake")%></asp:Label>
+
+                                                <asp:Label ID="lblImage" visible="false" runat="server" Text=" ">  <asp:Image ImageUrl='<%# Eval("CarNo", "Search.aspx?CarNo={0}")%>' runat="server" />    </asp:Label>
+                                                <asp:Label ID="lblPrice" visible="false" runat="server" Text=" ">  <%# Eval("RentalPrice")%></asp:Label>
                                             </div>
                                             <div class="car-item-body">
                                                 <div class="content">
@@ -183,9 +189,9 @@
                                                         <span>
                                                             <asp:CheckBox ID="CheckBox300" Text="200KM*/Day R375" runat="server" /></span><br />
                                                     </span> -->
-                                                   <asp:Button class="cmn-btn" ID="btnRent" runat="server" Text="Rent" />
+                                                   <asp:Button class="cmn-btn" ID="btnRent" runat="server" Text="Rent" OnClick="btnRent_Click1" />
                                                 </div>
-
+                                             
 
 
                                             </div>

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Management.aspx.cs" Inherits="momes.Admin_Management1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Approve_Test.aspx.cs" Inherits="momes.Approve_Test" %>
+
 
 <!DOCTYPE html>
 <html runat="server">
@@ -34,21 +35,21 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <form id="form2" runat="server">   
+  <form id="form2" runat="server">  
   <!-- preloader start -->
   <div id="preloader"></div>
-  <!-- preloader end -->   
+  <!-- preloader end -->  
 
   <!--  header-section start  -->
   <header class="header-section">
     <div class="header-top">
       <div class="container">
         <div class="row align-items-center">
-          
+         
           <div class="col-lg-12">
             <ul class="header-info d-flex justify-content-center">
               <ul class="header-info d-flex justify-content-center">
-                <h1 style="color: aliceblue;">  Momentum Car Rentals </h1> 
+                <h1 style="color: aliceblue;">  Momentum Car Rentals </h1>
               </ul>
           </div>
           <div class="col-lg-3">
@@ -56,7 +57,7 @@
               <div class="lag-select-area">
                
               </div>
-              
+             
             </div>
           </div>
         </div>
@@ -70,38 +71,39 @@
           <span class="menu-toggle"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav main-menu mr-auto">
+
+                  <ul class="navbar-nav main-menu mr-auto">
               <li class="menu_has_children"><a href="#0">Bookings</a>
                 <ul class="sub-menu">
                   <li><a href="reservation.html">Manage</a></li>
-                  
+                 
                 </ul>
               </li>
 
                  <li class="menu_has_children"><a href="#0">Customer</a>
                 <ul class="sub-menu">
                   <li><a href="reservation.html">Manage</a></li>
-                  
+                 
                 </ul>
               </li>
               <li class="menu_has_children"><a href="#0">Branches</a>
                 <ul class="sub-menu">
                   <li><a href="Manage_Branches.aspx">Manage</a></li>
-                  
+                 
                 </ul>
               </li>
               <li class="menu_has_children"><a href="#0">Brands</a>
                 <ul class="sub-menu">
                   <li><a href="Manage_Brand.aspx">Manage</a></li>
                  
-                
+               
                 </ul>
               </li>
               <li class="menu_has_children"><a href="#0">Vehicle Type</a>
                 <ul class="sub-menu">
                   <li><a href="Manage_Vehicle_Type.aspx">Manage</a></li>
-                  
-                
+                 
+               
                 </ul>
               </li>
               <li class="menu_has_children"><a href="#0">Vehicle</a>
@@ -109,11 +111,15 @@
                   <li><a href="reservation.html">Add</a></li>
                   <li><a href="login.html">Update</a></li>
                   <li><a href="Registration.aspx">Delete</a></li>
-                
+               
                 </ul>
               </li>
               <li>   </li>
             </ul>
+
+
+
+           
           </div>
         </nav>
       </div>
@@ -126,10 +132,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-title">Registration</h2>
+          <h2 class="page-title">Vehicle Type </h2>
           <ol class="page-list">
             <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-            <li>Registration</li>
+            <li>Admin</li>
           </ol>
         </div>
       </div>
@@ -144,80 +150,81 @@
         <div class="col-lg-12">
           <div class="login-block text-center">
             <div class="login-block-inner">
-              <h1 style="color:orange" class="title">Admin Management</h1>
-             
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                
-                                <a href="Manage_Vehicle_Type.aspx" class="btn btn-primary">Manage Vehicle Types</a>
-                            </div>
+              <h3 style="color:#F94001" class="title">Rental Management </h3>
+              <form class="login-form">
+                <div  class="frm-group text-center">
+                 
+                    <div class="frm-group">
+                           <div style="padding-left:200px;" class="col-md-10">
+
+                            <asp:DropDownList ID="ddlCustomer" runat="server"></asp:DropDownList>
+                               <br />
+
                         </div>
-                    </div>
 
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                            
-                                <a href="Approve_Test.aspx" class="btn btn-primary">Manage Bookings</a>
-                            </div>
-                        </div>
-                    </div>
+                    </div> 
+              
+                  <div class="frm-group">
+                       
+                       <div style="padding-left:200px;" class="col-md-10">
+                          <asp:GridView Width="100%" ID="GrdApproval"  runat="server" >
+                               <AlternatingRowStyle BackColor="White"></AlternatingRowStyle>
 
+                               <FooterStyle BackColor="#F94001" Font-Bold="True" ForeColor="White"></FooterStyle>
 
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
+                               <HeaderStyle BackColor="#F94001" Font-Bold="True" ForeColor="Black"></HeaderStyle>
+
+                               <PagerSettings PageButtonCount="5" />
+
+                               <PagerStyle  HorizontalAlign="Center" BackColor="#FFCC66" ForeColor="#333333"></PagerStyle>
+
+                               <RowStyle BackColor="#FFFBD6" ForeColor="#333333"></RowStyle>
+
+                               <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="White"></SelectedRowStyle>
+
+                               <SortedAscendingCellStyle BackColor="#FDF5AC"></SortedAscendingCellStyle>
                                
-                                <a href="Manage_Branches.aspx" class="btn btn-primary">Manage Branches</a>
-                            </div>
+
+                               <SortedAscendingHeaderStyle BackColor="#4D0000"></SortedAscendingHeaderStyle>
+
+                               <SortedDescendingCellStyle BackColor="#FCF6C0"></SortedDescendingCellStyle>
+
+                               <SortedDescendingHeaderStyle BackColor="#820000"></SortedDescendingHeaderStyle>
+                           </asp:GridView>     
+                             
+                           
+
+                             </div>
+                    
+                      
+                  </div>
+                    <div class="frm-group">
+                        <div style="padding-left: 100px;" class="col-md-10">
+                            <div style="padding-left: 50px;" class="col-md-5">
+                            <asp:Button ID="Button1" class="cmn-btn" runat="server" Text="Approve" OnClick="Button1_Click" />
+                                </div>
+                             <div style="padding-left: 50px;" class="col-md-5">
+                            <asp:Button ID="Button2" class="cmn-btn" runat="server" Text="Decline" OnClick="Button2_Click" />
                         </div>
-                    </div>
-                </div>
 
-                  <br />
 
-                  <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Manage  Customers</a>
-                            </div>
-                        </div>
                     </div>
 
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <a href="Manage_Brand.aspx" class="btn btn-primary">Manage Vehicle Brands</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <a href="Vehicle_Management.aspx" class="btn btn-primary">Manage Vehicles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
+                           </div> 
+                 
+                 
+                      </div>
+                   
+              </form>
              
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
-  </section>
-  <!-- login-section end -->
 
-  <!-- footer-section start -->
-  <!-- footer-section end -->
-  
-  <!-- scroll-to-top start -->
+          </div>
+        </div>
+  </section>
   <div class="scroll-to-top">
     <span class="scroll-icon">
       <i class="fa fa-rocket"></i>
@@ -252,3 +259,8 @@
 </body>
 
 </html>
+
+
+
+
+

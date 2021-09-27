@@ -16,6 +16,7 @@ namespace momes
         DBAccess da = new DBAccess();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 string Query = "SELECT image from VEHICLE where CarNo = @Id";
@@ -83,6 +84,8 @@ namespace momes
             Session["Date_Time_Pick_Up"] = txtP.Text;
             Session["Date_Time_Off"] = txtD.Text;
 
+           
+
 
 
             DateTime pickDate = Convert.ToDateTime(txtP.Text);
@@ -121,6 +124,11 @@ namespace momes
             Session["Date_Time_Pick_Up"] = txtP.Text;
             Session["Date_Time_Off"] = txtD.Text;
 
+           /* Session["Date_Time_Pick_Up"] = l.Text;
+            Session["Date_Time_Off"] = txtD.Text;
+            Session["Date_Time_Pick_Up"] = txtP.Text;
+            Session["Date_Time_Off"] = txtD.Text;*/
+
             Response.Redirect("Quote.aspx");
         }
 
@@ -134,7 +142,23 @@ namespace momes
 
         protected void lstVehicle_SelectedIndexChanged(object sender, EventArgs e)
         {
+           // lblCar_Make.Text=
+        }
 
+        protected void btnRent_Click1(object sender, EventArgs e)
+        {
+           // Session["Car_Name"] = lblCarNo.Text;
+            Session["Location_Pick_Up"] = ddlBranchP.Text;
+            Session["Location_Drop_Off"] = ddlBranchD.Text;
+            Session["Date_Time_Pick_Up"] = txtP.Text;
+            Session["Date_Time_Off"] = txtD.Text;
+
+            /* Session["Date_Time_Pick_Up"] = l.Text;
+             Session["Date_Time_Off"] = txtD.Text;
+             Session["Date_Time_Pick_Up"] = txtP.Text;
+             Session["Date_Time_Off"] = txtD.Text;*/
+
+            Response.Redirect("Quote.aspx");
         }
     }
 }

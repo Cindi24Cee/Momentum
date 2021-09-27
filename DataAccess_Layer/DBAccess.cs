@@ -5,6 +5,7 @@ using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using System.Text;
 using Data_Access_Layer.Library.ViewModels;
+using DataAccess_Layer.Library.ViewModels;
 
 namespace Data_Access_Layer
 {
@@ -154,6 +155,27 @@ namespace Data_Access_Layer
         }
 
 
+      public List<UspCustomerRental> Get_Customer_Rental()
+        {
+            List<UspCustomerRental> list = new List<UspCustomerRental>();
+            using (DataTable table = DBHelper.Select("sp_getRental", CommandType.StoredProcedure))
+            {
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow row in table.Rows)
+                    {
+                        UspCustomerRental customer_rental = new UspCustomerRental
+                        {
+                            CustomerNo = Convert.ToInt32(row["CustomerNo"]),
+                            Customer_Full_Name = row["Customer_Full_Name"].ToString()
+                        };
+                        list.Add(customer_rental);
+                    }
+                }
+            }
+            return list;
+        }
+        
 
         //Adding
         public bool AddBrand(string BrandName)
@@ -325,7 +347,38 @@ namespace Data_Access_Layer
         }
 
 
+        public List<uspRentalInfo> Get_Renta_Info(int customerNo)
+        {
 
+
+            List<uspRentalInfo> list = null;
+            SqlParameter[] parameters = new SqlParameter[]
+                 {
+                          new  SqlParameter("@customerNo",customerNo),
+
+                 };
+
+            using (DataTable table = DBHelper.ParamSelect("sp_getCustomerRentals", CommandType.StoredProcedure, parameters))
+            {
+                if (table.Rows.Count > 0)
+                {
+                    list = new List<uspRentalInfo>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        uspRentalInfo rentInfo = new uspRentalInfo();
+                        rentInfo.CustomerID = Convert.ToInt32(row["CustomerID"]);
+                       // rentInfo.DateReserved = Convert.ToDateTime(row["DateReserved"]);
+
+                      //  rentInfo.DateReserved = Convert.ToDateTime(row["DateReturned"]);
+                        rentInfo.CustomerName = row["CustomerName"].ToString();
+                        rentInfo.PhoneNo = row["PhoneNo"].ToString();
+                        rentInfo.EmailAddress = row["EmailAddress"].ToString();
+                        list.Add(rentInfo);
+                    }
+                }
+            }
+            return list;
+        }
 
 
 
@@ -366,7 +419,69 @@ namespace Data_Access_Layer
             return list;
         }
         //Update
+        public List<uspVehicle> Update_Vehicle(int carNo)
+        {
+            List<uspVehicle> list = null;
+            SqlParameter[] parameters = new SqlParameter[]
+                 {
+                          new  SqlParameter("@CarNo",carNo),
 
+                 };
+            using (DataTable table = DBHelper.ParamSelect("sp_UpdateVehicle", CommandType.StoredProcedure, parameters))
+            {
+                if (table.Rows.Count > 0)
+                {
+                    list = new List<uspVehicle>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        uspVehicle search = new uspVehicle();
+                        // search.CarNo = int.Parse(row["CarNo"].ToString());
+                        search.CarLicenseNo = row["CarLicenseNo"].ToString();
+                        search.CarMake = row["CarMake"].ToString();
+                        search.CarModelYear = Convert.ToInt32(row["CarModelYear"].ToString());
+                        search.FuelType = row["FuelType"].ToString();
+                        search.DoorNo = int.Parse(row["DoorNo"].ToString());
+                        search.SeatNo = int.Parse((row["SeatNO"].ToString()));
+                        search.Color = row["Color"].ToString();
+                        search.Power = row["Power"].ToString();
+                        search.Mileage = (row["Mileage"].ToString());
+                        //search.Image = Convert.ToByte(row["Image"]);
+                        list.Add(search);
+                    }
+                }
+            }
+            return list;
+        }
+
+
+        public List<uspVehicle> Update_Vehicle_Type(int vehicle_type_id)
+        {
+            List<uspVehicle> list = null;
+            SqlParameter[] parameters = new SqlParameter[]
+                 {
+                          new  SqlParameter("@CarNo",vehicle_type_id),
+
+                 };
+            using (DataTable table = DBHelper.ParamSelect("sp_UpdateVehicle_type", CommandType.StoredProcedure, parameters))
+            {
+                if (table.Rows.Count > 0)
+                {
+                    list = new List<uspVehicle>();
+                    foreach (DataRow row in table.Rows)
+                    {
+                        uspVehicle search = new uspVehicle();
+                        // search.CarNo = int.Parse(row["CarNo"].ToString());
+                        search.CarLicenseNo = row["CarLicenseNo"].ToString();
+                        search.CarMake = row["CarMake"].ToString();
+                        search.CarModelYear = Convert.ToInt32(row["CarModelYear"].ToString());
+                        
+                        //search.Image = Convert.ToByte(row["Image"]);
+                        list.Add(search);
+                    }
+                }
+            }
+            return list;
+        }
 
         //Delete
 

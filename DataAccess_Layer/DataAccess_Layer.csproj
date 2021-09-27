@@ -66,10 +66,12 @@
     <Compile Include="Library\ViewModels\uspBrand.cs" />
     <Compile Include="Library\ViewModels\uspCity.cs" />
     <Compile Include="Library\ViewModels\uspCustomer.cs" />
+    <Compile Include="Library\ViewModels\UspCustomerRental.cs" />
     <Compile Include="Library\ViewModels\uspEmployer.cs" />
     <Compile Include="Library\ViewModels\uspPayment.cs" />
     <Compile Include="Library\ViewModels\uspProvince.cs" />
     <Compile Include="Library\ViewModels\uspRental.cs" />
+    <Compile Include="Library\ViewModels\uspRentalInfo.cs" />
     <Compile Include="Library\ViewModels\uspTransaction.cs" />
     <Compile Include="Library\ViewModels\uspVehicle.cs" />
     <Compile Include="Library\ViewModels\uspVehicleType.cs" />
