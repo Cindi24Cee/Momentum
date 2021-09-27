@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Vehicle_Management.aspx.cs" Inherits="momes.Vehicle_Management" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Update_Vehicle.aspx.cs" Inherits="momes.Update_Vehicle" %>
 <!DOCTYPE html>
 <html runat="server">
 
@@ -34,7 +33,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <form id="form2" runat="server">   
+  <form id="form1" runat="server">   
   <!-- preloader start -->
   <div id="preloader"></div>
   <!-- preloader end -->   
@@ -70,8 +69,7 @@
           <span class="menu-toggle"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-              <ul class="navbar-nav main-menu mr-auto">
+           <ul class="navbar-nav main-menu mr-auto">
               <li class="menu_has_children"><a href="#0">Bookings</a>
                 <ul class="sub-menu">
                   <li><a href="reservation.html">Manage</a></li>
@@ -118,7 +116,6 @@
               </li>
               <li>   </li>
             </ul>
-          
           </div>
         </nav>
       </div>
@@ -131,10 +128,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-title">Registration</h2>
+          <h2 class="page-title">Add Car </h2>
           <ol class="page-list">
             <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-            <li>Registration</li>
+            <li>Car Registration</li>
           </ol>
         </div>
       </div>
@@ -149,60 +146,166 @@
         <div class="col-lg-12">
           <div class="login-block text-center">
             <div class="login-block-inner">
-              <h1 style="color:orange" class="title">Admin Management</h1>
-             
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                
-                                <a href="Register_Vehicle.aspx" class="btn btn-primary">Add Vehicles</a>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                
-                                <a href="Update_Vehicle.aspx" class="btn btn-primary">Update Vehicles</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                     <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                               
-                                <a href="Remove_Vehicles.aspx" class="btn btn-primary">Remove Vehicle</a>
-                            </div>
-                        </div>
-                    </div>
+              <h3 style="color:orange" class="title">Details </h3>
+              <form class="login-form">
+               <%-- <div class="frm-group text-center">
+                  <a href="#0" class="facebook">facebook</a>
+                  <a href="#0" class="google">google plus</a>
+                  <a href="#0" class="twitter">twitter</a>
+                </div>--%>
+                <div  class="frm-group text-center">
+                 
                 </div>
-
-                  <br />
-
-                  <div class="row">
-                    <div class="col-md-12">
-                        <div class="card" style="width: 49rem;">
-                            <div class="card-body">
-                                <a href="#" class="btn btn-primary">Manage  Vehicle Booking</a>
-                            </div>
-                        </div>
-                    </div>
-
-                     
-                    </div>
+                 <div class="frm-group">
+                
+                  
                 </div>
+                  <div class="frm-group">
+                      <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+
+                        <div class="frm-group">
+                          <div style="float: left;" class="col-md-12">
+                              <p>Vehicles</p>
+                              <asp:DropDownList ID="ddlVehicle" runat="server"></asp:DropDownList>
+
+                          </div>
+                      <div class="frm-group">
+                          <div style="float: left;" class="col-md-6">
+                              <p>Branch</p>
+                              <asp:DropDownList ID="ddlBranch" runat="server"></asp:DropDownList>
+
+                          </div>
+
+
+                          <div style="float: right;" class="col-md-6">
+                              <p>Vehicle Type</p>
+                              <asp:DropDownList ID="ddlVType" runat="server"></asp:DropDownList>
+
+                          </div>
+
+                      </div>
+
+                      <div class="frm-group">
+                          <div style="float: left;" class="col-md-6">
+                              <p>Brand</p>
+                              <asp:DropDownList ID="ddlBrand" runat="server"></asp:DropDownList>
+
+                          </div>
+
+                          <div style="float: right;" class="col-md-6">
+                              <p>Car Name</p>
+                              <asp:TextBox ID="txtMake" CssClass="form-control" Placeholder="Name Of The Car" runat="server"></asp:TextBox>
+
+
+                          </div>
+                      </div>
+
+                      <div class="frm-group">
+                          <div style="float: right;" class="col-md-6">
+                              <p>Car Model</p>
+                              <asp:TextBox ID="txtModelYr" CssClass="form-control" Placeholder="Model Year" runat="server"></asp:TextBox>
+                          </div>
+
+                            <div style="float: left;" class="col-md-6">
+                              <p>Mileage</p>
+                              <asp:TextBox ID="txtMileage" CssClass="form-control" TextMode="Number" Placeholder="Mileage in KM" runat="server"></asp:TextBox>
+
+                          </div>
+                         
+                      </div>
+
+
+
+
+                      <div class="frm-group">
+                          <div style="float: right;" class="col-md-6">
+                              <p>Fuel Type</p>
+                              <asp:DropDownList ID="ddlFuel" runat="server">
+                                  <asp:ListItem>Diesel</asp:ListItem>
+                                  <asp:ListItem>Petrol</asp:ListItem>
+                              </asp:DropDownList>
+
+
+                          </div>
+                          <div style="float: left;" class="col-md-6">
+                              <p>Power</p>
+                              <asp:DropDownList ID="ddlPower" runat="server">
+                                  <asp:ListItem>Automatic</asp:ListItem>
+                                  <asp:ListItem>Manual</asp:ListItem>
+                              </asp:DropDownList>
+
+
+
+
+                          </div>
+
+
+                      </div>
+                      <div class="frm-group">
+                          <div style="float: right;" class="col-md-6">
+                              <p>License No</p>
+                              <asp:TextBox ID="txtLicenceNo" CssClass="form-control" Placeholder="No. Plate" runat="server"></asp:TextBox>
+
+                          </div>
+                          <div style="float: left;" class="col-md-6">
+                              <p>Color</p>
+                              <asp:TextBox ID="txtColor" CssClass="form-control" Placeholder="Color" runat="server"></asp:TextBox>
+                          </div>
+                           
+
+
+
+                      </div>
+
+                      <div class="frm-group">
+                          <div style="float: right;" class="col-md-6">
+                              <p>Seat No</p>
+                              <asp:TextBox ID="txtSeat" CssClass="form-control" Placeholder="Seat No." runat="server"></asp:TextBox>
+                          </div>
+                          <div style="float: left;" class="col-md-6">
+                              <p>Door</p>
+                              <asp:TextBox ID="txtDoor" CssClass="form-control" TextMode="Number" Placeholder="Door No." runat="server"></asp:TextBox>
+
+                          </div>
+
+                      </div>
+                      <div class="frm-group">
+
+                          <div style="float: right;" class="col-md-6">
+                              <p>Car Price</p>
+                              <asp:TextBox ID="txtPrice" CssClass="form-control" TextMode="Number" Placeholder="R" runat="server"></asp:TextBox>
+
+                          </div>
+
+                        
+
+                          <div style="float: left;" class="col-md-6">
+
+                              <p>Car Image</p>
+
+                              <asp:FileUpload ID="FileUpload1" CssClass="form-Control" runat="server" />
+                              &nbsp;<br />
+                          </div>
+                      </div>
+
+
+
+                  </div>
                
+                  
+                   
+                   <div class="frm-group">
+                <asp:Button class="cmn-btn" ID="btnLog" runat="server" Text="Update"  />
+                </div>
+             
              
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+       </form>
+   
+   
+
   <!-- login-section end -->
 
   <!-- footer-section start -->

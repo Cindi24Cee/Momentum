@@ -186,6 +186,7 @@
     <Content Include="assets\js\owl.carousel.min.js" />
     <Content Include="assets\js\wickedpicker.min.js" />
     <Content Include="assets\js\wow.min.js" />
+    <Content Include="Confirm_Booking.aspx" />
     <Content Include="Contact_Us.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -264,6 +265,7 @@
     <Content Include="Site.Master" />
     <Content Include="test1.aspx" />
     <Content Include="testing123.aspx" />
+    <Content Include="Update_Vehicle.aspx" />
     <Content Include="VehicleRegistration.aspx" />
     <Content Include="Vehicle_Management.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -288,6 +290,13 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Confirm_Booking.aspx.cs">
+      <DependentUpon>Confirm_Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm_Booking.aspx.designer.cs">
+      <DependentUpon>Confirm_Booking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact_Us.aspx.cs">
       <DependentUpon>Contact_Us.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,6 +440,13 @@
     </Compile>
     <Compile Include="testing123.aspx.designer.cs">
       <DependentUpon>testing123.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Vehicle.aspx.cs">
+      <DependentUpon>Update_Vehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Update_Vehicle.aspx.designer.cs">
+      <DependentUpon>Update_Vehicle.aspx</DependentUpon>
     </Compile>
     <Compile Include="VehicleRegistration.aspx.cs">
       <DependentUpon>VehicleRegistration.aspx</DependentUpon>

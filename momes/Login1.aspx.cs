@@ -39,7 +39,9 @@ namespace momes
                 try
                 {
                     da.AuthenticateUser(txtEmail.Text.Trim(), txtPassword.Text.Trim());
-                Response.Redirect("Quote.aspx");
+                
+                
+                    Response.Redirect("Confirm_Booking.aspx");
                 }
                 catch (SqlException ex)
                 {

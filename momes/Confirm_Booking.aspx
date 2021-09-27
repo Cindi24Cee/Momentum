@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Error_Page.aspx.cs" Inherits="momes.Error_Page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Confirm_Booking.aspx.cs" Inherits="momes.Confirm_Booking" %>
 
 <!DOCTYPE html>
 <html runat="server">
@@ -32,6 +32,77 @@
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <!-- main style css link -->
   <link rel="stylesheet" href="assets/css/main.css">
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.head {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    text-align:left;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 403px;
+    height: 23px;
+}
+
+.auto-style3 {
+    height: 23px;
+}
+
+.auto-style4 {
+    width: 100%;
+    height: 452px;
+}
+
+.auto-style5 {
+    width: 767px;
+}
+
+.auto-style6 {
+    width: 767px;
+    height: 23px;
+}
+
+.btn-quote {
+    background: #FF3300;
+    color: #fff;
+    height: 42px;
+    width: 156px;
+    border: 1px solid #FF3300;
+    margin-top: 20px;
+    text-transform: uppercase;
+
+}
+
+#Button1 {
+    margin-left: 50px;
+}
+
+@media screen and (max-width:991px) {
+    #Button1 {
+        margin-left: 120px;
+    }
+}
+    </style>
 </head>
 <body>
   <form id="form1" runat="server">   
@@ -84,7 +155,7 @@
                   <li><a href="WebForm1.aspx">Book Car</a></li>
                 </ul>
               </li>
-              <li ><a href="WebForm1.aspx">Reservation</a>
+              <li ><a href="Search.aspx">Reservation</a>
                               
               </li>
             </ul>
@@ -96,42 +167,133 @@
   <!--  header-section end  -->
 
   <!-- inner-apge-banner start -->
-  <section class="inner-page-banner bg_img overlay-3" data-background="assets/images/inner-page-bg.jpg">
+   <section class="inner-page-banner bg_img overlay-3" data-background="assets/images/inner-page-bg.jpg">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-title">Error</h2>
+          <h2 class="page-title">Quotation</h2>
           <ol class="page-list">
-          
-            <li>Error Page</li>
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li>Quotation</li>
           </ol>
         </div>
       </div>
     </div>
   </section>
-  <!-- inner-apge-banner end -->
-
-  <!-- login-section start -->
-  <section class="login-section pt-120 pb-120">
+      
+   
+  
+     <section class="login-section pt-120 pb-120">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="login-block text-center">
             <div class="login-block-inner">
-             
-              <form class="login-form">
-              <h1 style="color:gray;">Page Not Found! </h1>
-                  <p>
-                      <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-                  </p>
-              </form>
-            
+              
+                <div class ="head">
+            <h2 style="color:orange;">Confirm Booking Details</h2></div>
+                <br />
+                <asp:Label ID="lblMessage" runat="server" class="text-success" Text=""></asp:Label>
+                <br />
+        <table class="auto-style4">
+            <tr>
+                <th class="auto-style5">Rental Vehicle Detail</th>
+            </tr>
+            <tr>
+                <td class="auto-style5">
+                    <asp:Image ID="Image1" runat="server" Height="122px" Width="151px" />
+                   
+                    
+                    <br />
+                    <br />
+                    <h5>Note*</h5>
+                    <br /> &nbsp;&nbsp; Pick Up Location : <asp:Label ID="lblPickUpL" runat="server" Text=" "></asp:Label> <br />
+                    &nbsp;&nbsp; Pick Up Date and Time  : <asp:Label ID="lblPickUpDate" runat="server" Text=" "></asp:Label> <br />
+                    &nbsp;&nbsp; Drop Off Location : <asp:Label ID="lblDropOffL" runat="server" Text=" "></asp:Label><br />
+                    &nbsp;&nbsp; Drop Off Date and Time  :<asp:Label ID="lblDropOffD" runat="server" Text=" "></asp:Label> <br />
+                    <br />
+                   
+                      <asp:Label ID="lblCarName" runat="server" Text="Mazda"> </asp:Label>
+
+                </td>
+                <td>
+                    <asp:Label ID="lblNumberOfDays" runat="server" Text="NumberOfDays"></asp:Label> Days
+                    &nbsp;
+                    <asp:Label ID="lblX" runat="server" Text="*"></asp:Label>
+                    &nbsp;
+                    <asp:Label ID="lblPrice" runat="server" Text="Price"></asp:Label>
+                    &nbsp;
+                    <asp:Label ID="lvlEquals" runat="server" Text="="></asp:Label>
+                    &nbsp;
+                    <asp:Label ID="lblTotalPrice" runat="server" Text="TotalPrice"></asp:Label>
+                       </td>
+
+            </tr>
+            <tr>
+                <td class="auto-style5">Extras</td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Admin Fees</td>
+
+            </tr>
+            <tr>
+                <td class="auto-style5">Admin and Prep Fee(R130.00)</td>
+                <td>R130.00&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Contract Fee(R70.00)</td>
+                <td>R70.00</td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Refundable Deposit</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">
+                    <p style="color:black;">Refundable Deposit.</p>
+                    <p style="color: blue">*Please note:</p>
+                    <p style="color:black;">
+                        When paying with Cash, via EFT, by Debit Card or
+                    <br />
+                        Credit Card please ensure that you have refudable deposit available<br />
+                        when collecting your vehicle.
+                    </p>
+                </td>
+                <td class="auto-style3">R3500.00</td>
+            </tr>
+            <tr>
+                <td class="auto-style6"><b>Grand Total</b></td>
+                <td class="auto-style3">
+                    
+                    &nbsp; R <asp:Label ID="lblGrandTotal" runat="server" Text="Price"></asp:Label> &nbsp;.00</td>
+            </tr>
+        </table>
+
+           
+                    <br />
+                    &nbsp;
+                  <div class="row">
+                      <div class="col-md-0"></div>
+
+                       
+                     
+                       <div class="col-md-12"><asp:Button ID="Button" class="cmn-btn" runat="server" Text="Confirm Booking" OnClick="Button_Click" />   </div>
+
+                      <div class="col-md-0">   <br />
+                    <br />
+                    &nbsp;</div>
+                    
+                   
+
+                </div>
+         
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
   <!-- login-section end -->
 
   <!-- footer-section start -->

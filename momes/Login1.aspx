@@ -139,9 +139,11 @@
                 </div>
                 <div class="frm-group">
                     <asp:Label ID="lblCustomerName"  Visible="false" runat="server" Text="Label"></asp:Label>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="txtEmail" runat="server" ErrorMessage="User Name Required"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="txtEmail"   placeholder="Email Address" TextMode="Email" CssClass="form-control" runat="server"></asp:TextBox><br />&nbsp;
                 </div>
                 <div class="frm-group">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password Required"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="txtPassword" TextMode="Password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
                  <br />&nbsp;
                 </div>

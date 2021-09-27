@@ -42,22 +42,24 @@ namespace momes
         protected void btnBook_Click(object sender, EventArgs e)
         {
 
-            Session["vehicle_type"] = ddlVehicleType.SelectedItem.Value;
-            Session["Location_Pick_Up"] = ddlPick.SelectedItem.Text;
-            Session["Location_Drop_Off"] = ddlDrop.SelectedItem.Text;
-            Session["Date_Time_Pick_Up"] = txtPickupDate.Text;
-            Session["Date_Time_Off"] = txtDropOffDate.Text;
-
-            Response.Redirect("Search.aspx");
-            try
+            
+         
+           try
             {
                 Session["vehicle_type"] = ddlVehicleType.SelectedItem.Value;
-                Response.Redirect("Search.aspx");
+                Session["Location_Pick_Up"] = ddlPick.SelectedItem.Text;
+                Session["Location_Drop_Off"] = ddlDrop.SelectedItem.Text;
+                Session["Date_Time_Pick_Up"] = txtPickupDate.Text;
+                Session["Date_Time_Off"] = txtDropOffDate.Text;
+
+                //Session["vehicle_type"] = ddlVehicleType.SelectedItem.Value;
+                Response.Redirect("test1.aspx");
             }
             catch(Exception ex)
             {
-               ex.ToString();
-                //Response.Redirect("NotFound.aspx");
+              lblError.Text= ex.ToString();
+               // Response.Redirect("Error_Page.aspx");
+               // Session["Error"] = ex.ToString();
             }
         }
 

@@ -25,5 +25,7 @@ namespace Data_Access_Layer.Library.ViewModels
         public int VehicleTypeID { get; set;  }
         public int BrandNo { get; set; }
         public Byte Image { get; set; }
+
+        public double RentalPrice { get; set; }
     }
 }

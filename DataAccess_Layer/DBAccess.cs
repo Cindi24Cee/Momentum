@@ -123,7 +123,7 @@ namespace Data_Access_Layer
                          BranchNo = Convert.ToInt32(row["BranchNo"].ToString()),
                          BrandNo = Convert.ToInt32(row["BrandNo"].ToString()),
                          VehicleTypeID = Convert.ToInt32(row["VehicleTypeID"]),
-                         ///Image = Convert.ToByte(row["Image"])
+                         RentalPrice = Convert.ToDouble(row["RentalPrice"])
 
                         };
                         list.Add(veh);
@@ -271,7 +271,7 @@ namespace Data_Access_Layer
             return DBHelper.NonQuery("sp_AddCustomer", CommandType.StoredProcedure, parameters);
         }
 
-        public bool AddRentals(int CarNo, int CustomerID, DateTime DateReserved, DateTime DateReturned, int EmployeeID)
+        public bool AddRentals(int CarNo, int CustomerID, DateTime DateReserved, DateTime DateReturned)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -280,11 +280,11 @@ namespace Data_Access_Layer
                 new SqlParameter("@CustomerID",CustomerID),
                 new SqlParameter("@DateReserved",DateReserved),
                  new SqlParameter("@DateReturned",DateReturned),
-                new SqlParameter("@EmployeeID",EmployeeID),
+               // new SqlParameter("@EmployeeID",EmployeeID),
 
             };
 
-            return DBHelper.NonQuery("sp_AddEnquiry", CommandType.StoredProcedure, parameters);
+            return DBHelper.NonQuery("sp_AddRental", CommandType.StoredProcedure, parameters);
         }
 
 

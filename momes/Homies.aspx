@@ -101,7 +101,7 @@
               </div>
               <div class="row">
                 <div class="form-group col-xl-12">
-                   
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtPickupDate" ForeColor="Red" runat="server" ErrorMessage="Pick Up Date Required"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="txtPickupDate" TextMode="DateTimeLocal" CssClass="form-control" runat="server"></asp:TextBox>
                   
                 </div>
@@ -109,7 +109,7 @@
               </div>
               <div class="row">
                 <div class="form-group col-xl-12">
-                  
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtDropOffDate" ForeColor="Red" runat="server" ErrorMessage="Pick Up Date Required"></asp:RequiredFieldValidator>
                     <asp:TextBox ID="txtDropOffDate" CssClass="form-control" TextMode="DateTimeLocal" runat="server"></asp:TextBox>
                   
                 </div>
@@ -142,7 +142,7 @@
             <div class="block-header">
               <h2 class="title"><a style="color:#F94001; ">About</a> Momentum Car Rentals</h2>
               <p> Momentum Car Rentals is a car renting company based is Randburg.We provide our customers with the best car rental services. Momentum Car Rentals is a car renting company based is Randburg.We provide our customers with the best car rental services. </p> 
-           
+           <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
             <div class="block-body">
               <ul class="cmn-list">
                 <li>It's cheaper.</li>

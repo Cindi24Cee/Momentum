@@ -78,40 +78,51 @@ namespace momes
 
         protected void btnReserve_Click(object sender, EventArgs e)
         {
-            //Session["Car_Name"] = lblC.Text;
-            Session["Location_Pick_Up"] = ddlBranchP.Text;
-            Session["Location_Drop_Off"] = ddlBranchD.Text;
-            Session["Date_Time_Pick_Up"] = txtP.Text;
-            Session["Date_Time_Off"] = txtD.Text;
-
-           
 
 
+           // if (HttpContext.Current.Session["Location_Pick_Up"] != null || HttpContext.Current.Session["Location_Drop_Off"] != null || HttpContext.Current.Session["Date_Time_Pick_Up"] != null || HttpContext.Current.Session["Date_Time_Off"] != null)
+          //  {
+                // code if session is not null
 
-            DateTime pickDate = Convert.ToDateTime(txtP.Text);
-            DateTime dropDate = Convert.ToDateTime(txtD.Text);
+                Session["Location_Pick_Up"] = ddlBranchP.Text;
+                Session["Location_Drop_Off"] = ddlBranchD.Text;
+                Session["Date_Time_Pick_Up"] = txtP.Text;
+                Session["Date_Time_Off"] = txtD.Text;
 
-            // DateTime pickTime = Convert.ToDateTime(txtPickupTime.Text);
-            //DateTime dropTime = Convert.ToDateTime(txtDropOffTime.Text);
-            DateTime date = DateTime.Now;
 
-            int result = DateTime.Compare(pickDate, dropDate);
 
-            string resultMsg = " ";
 
-            if ((result < 0 && date < pickDate))
-            {
-               
+                DateTime pickDate = Convert.ToDateTime(txtP.Text);
+                DateTime dropDate = Convert.ToDateTime(txtD.Text);
+
+                // DateTime pickTime = Convert.ToDateTime(txtPickupTime.Text);
+                //DateTime dropTime = Convert.ToDateTime(txtDropOffTime.Text);
+                DateTime date = DateTime.Now;
+
+                int result = DateTime.Compare(pickDate, dropDate);
+
+                string resultMsg = " ";
+
+                if ((result < 0 && date < pickDate))
+                {
+
+                    Response.Redirect("Quote.aspx");
+
+                }
+
+                else
+                {
+                    Response.Redirect("Homies.aspx");
+
+                }
                 Response.Redirect("Quote.aspx");
 
-            }
-
-            else
-            {
-                Response.Redirect("Homies.aspx");
-               
-            }
-            Response.Redirect("Quote.aspx");
+           // }
+           // else
+           // {
+                //Failed();
+              //  Response.Redirect("Search.aspx");
+          //  }
 
         }
 
@@ -143,6 +154,25 @@ namespace momes
         protected void lstVehicle_SelectedIndexChanged(object sender, EventArgs e)
         {
            // lblCar_Make.Text=
+        }
+
+        protected void Success()
+        {
+            string message = "Success.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+        }
+
+
+        protected void Failed()
+        {
+            string message = "Ensure all fields are field.";
+            string script = "window.onload = function(){ alert('";
+            script += message;
+            script += "')};";
+            ClientScript.RegisterStartupScript(this.GetType(), "FailMessage", script, true);
         }
 
         protected void btnRent_Click1(object sender, EventArgs e)
